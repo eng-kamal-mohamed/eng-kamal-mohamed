@@ -69,33 +69,7 @@ Wherever I join, I focus on replacing manual, paper-heavy workflows with automat
 | **✈️ Fleet & Serialized Inventory Logistics** | Built multi-warehouse digital tracking systems for serialized spare parts, technical telemetry, and supply-chain operations. |
 | **🌐 Infrastructure & Network Ops** | Hands-on Linux server administration, MikroTik RouterOS management, bandwidth monitoring, and uptime tracking. |
 
----
 
-## 🚀 Featured Projects
-
-<div align="center">
-
-<a href="https://github.com/eng-kamal-mohamed/CHAT-AI-ollama">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=CHAT-AI-ollama&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/eng-kamal-mohamed/Graduation-Projects-Management">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=Graduation-Projects-Management&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/eng-kamal-mohamed/Menu">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=Menu&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/eng-kamal-mohamed/-video-generator-app">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=-video-generator-app&theme=tokyonight&hide_border=true" />
-</a>
-
-<a href="https://github.com/eng-kamal-mohamed/cloud-hosting">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=cloud-hosting&theme=tokyonight&hide_border=true" />
-</a>
-
-</div>
 
 ---
 
