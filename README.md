@@ -7,7 +7,6 @@
 </a>
 
 <br/>
-
 <a href="https://github.com/eng-kamal-mohamed"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" /></a>
 <a href="https://www.linkedin.com/in/kamal-mohamed-930758232/"><img src="https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
 <a href="https://eng-kamal-mohamed.github.io/eng-kamal-mohamed/"><img src="https://img.shields.io/badge/Portfolio-Visit-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
@@ -76,10 +75,6 @@ Wherever I join, I focus on replacing manual, paper-heavy workflows with automat
 ## 📈 GitHub Analytics
 
 <div align="center">
-
-<img height="180" src="https://github-readme-stats.vercel.app/api?username=eng-kamal-mohamed&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" />
-
-<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eng-kamal-mohamed&layout=compact&theme=tokyonight&hide_border=true" />
 
 <br/><br/>
 
