@@ -1,403 +1,452 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kamal Mohamed ABO-Shady | Full-Stack Engineer & Digital Transformation Architect</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A',
-                        secondary: '#2563EB',
-                        accent: '#8B5CF6',
-                        success: '#10B981',
-                        dark: '#0F172A',
-                        light: '#F8FAFC'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #F8FAFC;
-            color: #0F172A;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 400px;
-            }
-        }
-        .timeline-line {
-            width: 4px;
-            background-color: #2563EB;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 1.25rem;
-        }
-        .timeline-dot {
-            width: 1.5rem;
-            height: 1.5rem;
-            background-color: #8B5CF6;
-            border: 4px solid #F8FAFC;
-            border-radius: 50%;
-            position: absolute;
-            left: 0.5rem;
-            margin-top: 0.25rem;
-            box-shadow: 0 0 0 2px #2563EB;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="Kamal Mohamed ABO-Shady — Full-Stack Software Engineer focused on digital transformation, enterprise dashboards, and data-driven systems.">
+  <meta property="og:title" content="Kamal Mohamed ABO-Shady | Engineering Profile">
+  <meta property="og:description" content="Full-Stack Engineering · Digital Transformation · Data Systems">
+  <title>Kamal Mohamed ABO-Shady | Full-Stack Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #080d1c; --panel: #10182b; --panel-2: #131f36; --line: rgba(148,163,184,.16);
+      --text: #edf4ff; --muted: #9aabc5; --blue: #58a6ff; --cyan: #53e0d0;
+      --violet: #a78bfa; --green: #62d6a5; --amber: #f6c66a;
+      --shadow: 0 24px 70px rgba(0,0,0,.28); --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0; color: var(--text); font-family: Manrope, system-ui, sans-serif;
+      background:
+        radial-gradient(ellipse at 12% 2%, rgba(37,99,235,.18), transparent 34%),
+        radial-gradient(ellipse at 88% 22%, rgba(124,58,237,.13), transparent 30%),
+        var(--bg);
+      line-height: 1.65; overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1160px, calc(100% - 44px)); margin: 0 auto; }
+    .mono { font-family: "DM Mono", monospace; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px);
+      background: rgba(8,13,28,.78); border-bottom: 1px solid var(--line);
+    }
+    .nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -.04em; }
+    .brand-mark {
+      width: 36px; height: 36px; display: grid; place-items: center; border-radius: 12px;
+      color: #07101e; background: linear-gradient(135deg,var(--cyan),var(--blue)); font-size: 13px;
+    }
+    .nav-links { display: flex; gap: 26px; color: var(--muted); font-size: 12px; font-weight: 700; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-cta { border: 1px solid rgba(83,224,208,.42); color: var(--cyan); border-radius: 999px; padding: 9px 15px; font-size: 12px; font-weight: 800; }
+    .hero { padding: 92px 0 66px; position: relative; }
+    .hero-grid { display: grid; grid-template-columns: 1.35fr .65fr; gap: 52px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(83,224,208,.24);
+      background: rgba(83,224,208,.07); color: var(--cyan); border-radius: 999px;
+      padding: 8px 13px; font: 11px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase;
+    }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(98,214,165,.12); }
+    h1 { margin: 23px 0 12px; font-size: clamp(42px,6.3vw,76px); line-height: 1.04; letter-spacing: -.065em; font-weight: 800; }
+    h1 span { color: transparent; background: linear-gradient(100deg,#fff 10%,#8dc7ff 52%,#65e4d2 100%); -webkit-background-clip: text; background-clip: text; }
+    .hero h2 { color: #c5d5ec; font-size: clamp(17px,2vw,22px); line-height: 1.45; font-weight: 600; margin: 0 0 19px; }
+    .hero-copy { max-width: 680px; color: var(--muted); font-size: 15px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 17px; border-radius: 12px; font-size: 12px; font-weight: 800; transition: .2s ease; }
+    .btn-primary { color: #06101c; background: linear-gradient(110deg,var(--cyan),#83baff); box-shadow: 0 10px 30px rgba(83,224,208,.16); }
+    .btn-ghost { border: 1px solid var(--line); color: var(--text); background: rgba(255,255,255,.025); }
+    .btn:hover { transform: translateY(-3px); }
+    .hero-card {
+      border: 1px solid rgba(148,163,184,.2); border-radius: 28px; padding: 25px;
+      background: linear-gradient(150deg,rgba(25,39,66,.9),rgba(13,21,39,.9)); box-shadow: var(--shadow);
+      position: relative; overflow: hidden;
+    }
+    .hero-card:before { content:""; position:absolute; width:190px; height:190px; right:-80px; top:-90px; border-radius:50%; background:rgba(83,224,208,.13); filter:blur(3px); }
+    .card-kicker { color: var(--muted); font: 10px "DM Mono",monospace; letter-spacing: .12em; text-transform: uppercase; }
+    .initials { margin: 23px 0 16px; font-size: 72px; font-weight: 800; line-height: 1; letter-spacing: -.08em; color: transparent; background: linear-gradient(135deg,#fff,#64e0d0); -webkit-background-clip:text; background-clip:text; }
+    .hero-card strong { display:block; font-size: 17px; }
+    .hero-card p { margin: 6px 0 20px; color: var(--muted); font-size: 12px; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:8px; }
+    .tag { border:1px solid var(--line); background:rgba(255,255,255,.035); border-radius:8px; padding:6px 9px; color:#c6d5e9; font:10px "DM Mono",monospace; }
+    .section { padding: 52px 0; }
+    .section-head { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:24px; }
+    .section-label { color:var(--cyan); font:11px "DM Mono",monospace; letter-spacing:.15em; text-transform:uppercase; }
+    h3.section-title { margin:7px 0 0; font-size:clamp(25px,3.5vw,36px); letter-spacing:-.05em; line-height:1.2; }
+    .section-desc { max-width:490px; color:var(--muted); font-size:13px; margin:0; }
+    .stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .stat {
+      position:relative; padding:24px; border:1px solid var(--line); border-radius:var(--radius);
+      background:linear-gradient(145deg,rgba(20,31,53,.9),rgba(13,21,38,.9)); overflow:hidden;
+    }
+    .stat:after { content:""; position:absolute; width:100px; height:100px; right:-42px; bottom:-55px; border-radius:50%; background:var(--glow,rgba(83,224,208,.1)); filter:blur(2px); }
+    .stat-num { font-size:clamp(34px,4vw,48px); line-height:1.1; font-weight:800; letter-spacing:-.06em; }
+    .stat-label { margin-top:8px; color:#d9e6f8; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.08em; }
+    .stat-note { margin:8px 0 0; color:var(--muted); font-size:11px; max-width:300px; }
+    .stat small { display:block; color:var(--cyan); font:10px "DM Mono",monospace; margin-top:14px; }
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .panel { padding:25px; border:1px solid var(--line); border-radius:var(--radius); background:linear-gradient(145deg,rgba(17,27,47,.94),rgba(12,20,36,.94)); box-shadow:0 14px 42px rgba(0,0,0,.12); min-width:0; }
+    .panel h4 { margin:0; font-size:17px; letter-spacing:-.03em; }
+    .panel-intro { color:var(--muted); font-size:11px; margin:7px 0 20px; }
+    .chart-box { position:relative; height:300px; min-width:0; }
+    .chart-box.tall { height:320px; }
+    .chart-note { color:#8193ae; font-size:10px; margin:12px 0 0; }
+    .journey {
+      border:1px solid var(--line); border-radius:26px; padding:30px;
+      background:linear-gradient(145deg,rgba(17,28,49,.96),rgba(10,17,32,.96)); box-shadow:var(--shadow);
+    }
+    .timeline { position:relative; margin-top:30px; }
+    .timeline:before { content:""; position:absolute; left:9px; top:8px; bottom:10px; width:1px; background:linear-gradient(var(--cyan),rgba(88,166,255,.18)); }
+    .entry { position:relative; padding:0 0 25px 38px; }
+    .entry:last-child { padding-bottom:0; }
+    .dot { position:absolute; left:2px; top:5px; width:15px; height:15px; border-radius:50%; background:var(--cyan); border:4px solid #14243b; box-shadow:0 0 0 1px rgba(83,224,208,.55); }
+    .entry-card { border:1px solid var(--line); background:rgba(255,255,255,.025); border-radius:16px; padding:19px 20px; }
+    .entry-top { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px; }
+    .date { color:var(--cyan); font:10px "DM Mono",monospace; letter-spacing:.05em; }
+    .duration { color:#aabbd1; font:10px "DM Mono",monospace; border:1px solid var(--line); padding:4px 8px; border-radius:999px; }
+    .entry h5 { margin:0; font-size:15px; letter-spacing:-.02em; }
+    .org { color:#9eb2ce; font-size:11px; margin:3px 0 9px; font-weight:700; }
+    .entry p { color:var(--muted); font-size:11px; margin:0; }
+    .skills { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+    .skill { padding:17px; border:1px solid var(--line); border-radius:15px; background:rgba(255,255,255,.025); }
+    .skill-icon { font-size:20px; margin-bottom:10px; }
+    .skill strong { display:block; font-size:12px; }
+    .skill span { color:var(--muted); font-size:10px; }
+    .performance { display:grid; grid-template-columns:.85fr 1.15fr; gap:20px; align-items:center; }
+    .performance-copy h4 { font-size:22px; line-height:1.25; letter-spacing:-.04em; margin:0 0 12px; }
+    .performance-copy p { color:var(--muted); font-size:12px; }
+    .callout { margin-top:18px; padding:13px 15px; border-left:2px solid var(--cyan); border-radius:0 10px 10px 0; background:rgba(83,224,208,.06); color:#b8c9df; font-size:10px; }
+    footer { padding:38px 0 46px; margin-top:42px; border-top:1px solid var(--line); background:rgba(3,7,16,.4); }
+    .footer-inner { display:flex; justify-content:space-between; align-items:center; gap:25px; }
+    .footer-title { font-weight:800; font-size:16px; }
+    .footer-sub { color:var(--muted); font-size:11px; margin-top:4px; }
+    .socials { display:flex; flex-wrap:wrap; gap:9px; }
+    .socials a { padding:9px 12px; border:1px solid var(--line); border-radius:10px; color:#c5d4e8; font-size:10px; font-weight:800; }
+    .socials a:hover { border-color:var(--cyan); color:var(--cyan); }
+    .copyright { color:#667993; font:9px "DM Mono",monospace; margin-top:25px; }
+    .reveal { opacity:0; transform:translateY(18px); transition:opacity .65s ease,transform .65s ease; }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    @media (max-width:850px) {
+      .hero-grid,.performance { grid-template-columns:1fr; }
+      .hero-card { max-width:480px; }
+      .nav-links { display:none; }
+      .skills { grid-template-columns:repeat(2,1fr); }
+    }
+    @media (max-width:650px) {
+      .wrap { width:min(100% - 30px,1160px); }
+      .hero { padding:62px 0 38px; }
+      .hero-grid { gap:30px; }
+      .stats,.two-col { grid-template-columns:1fr; }
+      .section { padding:36px 0; }
+      .section-head { display:block; }
+      .section-desc { margin-top:12px; }
+      .journey { padding:20px 15px; }
+      .panel { padding:19px; }
+      .chart-box,.chart-box.tall { height:270px; }
+      .footer-inner { display:block; }
+      .socials { margin-top:18px; }
+      .brand { font-size:13px; }
+      .nav-cta { padding:8px 11px; }
+    }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior:auto; }
+      *,*::before,*::after { transition:none!important; animation:none!important; }
+      .reveal { opacity:1; transform:none; }
+    }
+  </style>
 </head>
-<body class="antialiased">
+<body>
+  <div class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#home"><span class="brand-mark">KM</span><span>KAMAL MOHAMED</span></a>
+      <div class="nav-links">
+        <a href="#overview">OVERVIEW</a><a href="#expertise">EXPERTISE</a><a href="#journey">JOURNEY</a><a href="#systems">SYSTEMS</a>
+      </div>
+      <a class="nav-cta" href="mailto:aboshadykemo@gmail.com">LET'S CONNECT ↗</a>
+    </nav>
+  </div>
 
-    <header class="bg-gradient-to-r from-primary to-secondary text-white py-20 px-6 shadow-xl rounded-b-[3rem] mb-12 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-        <div class="max-w-5xl mx-auto relative z-10 text-center">
-            <span class="inline-block bg-blue-900/50 border border-blue-400/30 text-blue-200 text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4">
-                Full-Stack Software Engineer • Digital Transformation • AI Integration
-            </span>
-            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4">Kamal Mohamed ABO-Shady</h1>
-            <h2 class="text-xl md:text-2xl font-medium text-blue-200 mb-6">Driving High-Volume Paper-to-Digital Transformation & Real-Time Data Systems</h2>
-            <p class="text-base md:text-lg max-w-3xl mx-auto leading-relaxed text-blue-50">
-                Engineering end-to-end web ecosystems that replace manual, paper-heavy workflows with automated digital platforms. Backed by solid foundations in web design, rigorous training bootcamps, continuous tech events participation, and modern AI-assisted engineering workflows.
-            </p>
+  <header class="hero wrap" id="home">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow"><span class="pulse"></span> ENGINEERING PROFILE · 2026</div>
+        <h1><span>Kamal Mohamed</span><br>ABO-Shady.</h1>
+        <h2>Full-Stack Software Engineer<br>Digital Transformation · Data Systems · AI Integration</h2>
+        <p class="hero-copy">
+          I build practical digital systems that turn complex, paper-heavy operations into structured,
+          traceable workflows. My work connects modern web interfaces, reliable APIs, and data-driven
+          dashboards—with a focus on clarity, operational visibility, and maintainable engineering.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/eng-kamal-mohamed" target="_blank" rel="noopener noreferrer">⌘ Explore GitHub <span>↗</span></a>
+          <a class="btn btn-ghost" href="#journey">View professional journey ↓</a>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-
-        <section class="mb-16">
-            <p class="text-lg text-slate-600 text-center max-w-3xl mx-auto mb-8 font-medium">
-                Focused on measurable operational impact—bridging database integrity, API observability, and intuitive frontend visualization.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-accent text-center transform transition hover:-translate-y-1">
-                    <div class="text-5xl font-black text-primary mb-2">3+</div>
-                    <div class="text-sm uppercase tracking-widest text-slate-500 font-semibold">Years Experience</div>
-                    <p class="text-slate-600 mt-3 text-sm">Full-stack progression from Deltawy web design training to enterprise dashboard & workflow architecture.</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-secondary text-center transform transition hover:-translate-y-1">
-                    <div class="text-5xl font-black text-primary mb-2">400K+</div>
-                    <div class="text-sm uppercase tracking-widest text-slate-500 font-semibold">Records Managed</div>
-                    <p class="text-slate-600 mt-3 text-sm">High-volume operational datasets queried, indexed, and visualized with sub-second responsiveness.</p>
-                </div>
-                <div class="bg-white rounded-2xl shadow-lg p-8 border-t-4 border-success text-center transform transition hover:-translate-y-1">
-                    <div class="text-5xl font-black text-primary mb-2">100%</div>
-                    <div class="text-sm uppercase tracking-widest text-slate-500 font-semibold">Digital Traceability</div>
-                    <p class="text-slate-600 mt-3 text-sm">Paper-to-digital automation backed by client-server payload monitoring and AI-augmented workflows.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
-                <h3 class="text-3xl font-bold text-dark mb-4 border-b-2 border-secondary pb-2 inline-block">Core Engineering Domains</h3>
-                <p class="text-slate-600 mb-8">
-                    Balanced full-stack mastery across modern frontend interfaces, backend API lifecycles, high-volume databases, and AI Studio development tools.
-                </p>
-                <div class="chart-container">
-                    <canvas id="domainRadarChart"></canvas>
-                </div>
-            </section>
-
-            <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
-                <h3 class="text-3xl font-bold text-dark mb-4 border-b-2 border-accent pb-2 inline-block">Full-Stack Technical Arsenal</h3>
-                <p class="text-slate-600 mb-8">
-                    Proficiency across core technologies powering end-to-end digital transformation, from React/Next.js UIs to Node.js APIs and AI workflow tools.
-                </p>
-                <div class="chart-container">
-                    <canvas id="techBarChart"></canvas>
-                </div>
-            </section>
+      </div>
+      <aside class="hero-card">
+        <div class="card-kicker">ENGINEERING IDENTITY / 001</div>
+        <div class="initials">KM.</div>
+        <strong>From interface to infrastructure.</strong>
+        <p>Connecting user experience, application logic, and operational data into one coherent system.</p>
+        <div class="tag-row">
+          <span class="tag">FULL-STACK</span><span class="tag">NEXT.JS</span><span class="tag">NODE.JS</span>
+          <span class="tag">POSTGRESQL</span><span class="tag">DIGITAL OPS</span><span class="tag">AI WORKFLOWS</span>
         </div>
+      </aside>
+    </div>
+  </header>
 
-        <section class="bg-dark text-white rounded-3xl shadow-2xl p-8 md:p-12 mb-16 relative overflow-hidden">
-            <div class="absolute right-0 bottom-0 text-9xl text-slate-800 opacity-50 select-none translate-x-1/4 translate-y-1/4">&#9881;</div>
-            <h3 class="text-3xl font-bold mb-6 text-blue-300">Professional Journey & Enterprise Impact</h3>
-            <p class="text-slate-300 mb-10 max-w-2xl text-lg">
-                Tracing a continuous learning path from foundational web design training through active technical events and certifications to leading enterprise-grade developments.
-            </p>
-            
-            <div class="relative pl-10 md:pl-16">
-                <div class="timeline-line"></div>
-                
-                <div class="relative mb-12">
-                    <div class="timeline-dot"></div>
-                    <div class="bg-slate-800 rounded-xl p-6 ml-4 border-l-4 border-accent shadow-lg relative z-10">
-                        <span class="text-accent font-bold tracking-wider text-sm mb-1 block">Jan 2026 - Feb 2027 (14 Months)</span>
-                        <h4 class="text-xl font-bold mb-1">Lead Full-Stack & Enterprise Dashboard Engineer</h4>
-                        <p class="text-slate-400 font-medium mb-3">Enterprise Operations & Commercial Fleet Logistics</p>
-                        <p class="text-slate-300 text-sm">Architected centralized digital transformation platforms replacing manual paper logs across multi-warehouse logistics and workforce analytics. Engineered high-performance dashboards handling 400K+ records, serialized asset tracking, and strict client-server audit logging.</p>
-                    </div>
-                </div>
+  <main class="wrap">
+    <section class="section reveal" id="overview">
+      <div class="section-head">
+        <div><div class="section-label">01 / Career snapshot</div><h3 class="section-title">A journey built around systems.</h3></div>
+        <p class="section-desc">A concise view of the timeline, engineering direction, and operational scale represented across my experience.</p>
+      </div>
+      <div class="stats">
+        <article class="stat" style="--glow:rgba(83,224,208,.16)">
+          <div class="stat-num">3.5<span style="color:var(--cyan)">+</span></div>
+          <div class="stat-label">Years · Web & Digital Journey</div>
+          <p class="stat-note">From foundational web design training in 2023 through the current engineering timeline ending February 2027.</p>
+          <small>JUL 2023 — FEB 2027</small>
+        </article>
+        <article class="stat" style="--glow:rgba(88,166,255,.17)">
+          <div class="stat-num">3<span style="color:var(--blue)">+</span></div>
+          <div class="stat-label">Years · Development Track</div>
+          <p class="stat-note">Development-focused roles and practical engineering work across frontend, full-stack, dashboards, and data systems.</p>
+          <small>MAR 2024 — FEB 2027</small>
+        </article>
+        <article class="stat" style="--glow:rgba(167,139,250,.18)">
+          <div class="stat-num">400K<span style="color:var(--violet)">+</span></div>
+          <div class="stat-label">Records · Data Scale</div>
+          <p class="stat-note">Experience working with high-volume operational records, query workflows, and dashboard-oriented data views.</p>
+          <small>REPORTED PROJECT SCALE</small>
+        </article>
+      </div>
+    </section>
 
-                <div class="relative mb-12">
-                    <div class="timeline-dot bg-secondary border-dark" style="box-shadow: 0 0 0 2px #8B5CF6;"></div>
-                    <div class="bg-slate-800 rounded-xl p-6 ml-4 border-l-4 border-secondary shadow-lg relative z-10">
-                        <span class="text-secondary font-bold tracking-wider text-sm mb-1 block">Aug 2025 - Dec 2025 (5 Months)</span>
-                        <h4 class="text-xl font-bold mb-1">Dashboard Manager & Full-Stack Operations Specialist</h4>
-                        <p class="text-slate-400 font-medium mb-3">Lamar Real Estate (Qatar / Remote)</p>
-                        <p class="text-slate-300 text-sm">Directed core administrative dashboards and CRM data pipelines for an international real estate enterprise. Optimized PostgreSQL queries, automated API synchronization, and monitored client-server request/response latency.</p>
-                    </div>
-                </div>
+    <section class="section reveal" id="expertise">
+      <div class="section-head">
+        <div><div class="section-label">02 / Engineering focus</div><h3 class="section-title">Where I put my energy.</h3></div>
+        <p class="section-desc">The charts communicate my current focus areas and technology exposure—not certified skill scores or standardized benchmark results.</p>
+      </div>
+      <div class="two-col">
+        <article class="panel">
+          <h4>Core Engineering Domains</h4>
+          <p class="panel-intro">A self-assessed focus index across the areas that shape my work.</p>
+          <div class="chart-box"><canvas id="domainChart" aria-label="Radar chart showing engineering focus areas"></canvas></div>
+          <p class="chart-note">Focus index · personal snapshot, not an external proficiency assessment.</p>
+        </article>
+        <article class="panel">
+          <h4>Full-Stack Technical Arsenal</h4>
+          <p class="panel-intro">Technology groups I actively use, study, and build with.</p>
+          <div class="chart-box"><canvas id="stackChart" aria-label="Bar chart showing technical focus index"></canvas></div>
+          <p class="chart-note">Technology focus index · grouped by practical usage and learning priority.</p>
+        </article>
+      </div>
+    </section>
 
-                <div class="relative mb-12">
-                    <div class="timeline-dot bg-success border-dark" style="box-shadow: 0 0 0 2px #10B981;"></div>
-                    <div class="bg-slate-800 rounded-xl p-6 ml-4 border-l-4 border-success shadow-lg relative z-10">
-                        <span class="text-success font-bold tracking-wider text-sm mb-1 block">Jan 2025 - Jul 2025 (7 Months)</span>
-                        <h4 class="text-xl font-bold mb-1">Full-Stack / Frontend Developer</h4>
-                        <p class="text-slate-400 font-medium mb-3">Egypt Higher Institute for Computers</p>
-                        <p class="text-slate-300 text-sm">Engineered modern web applications using Next.js, TypeScript, and Tailwind CSS. Implemented secure authentication, role-based access control (RBAC), and real-time data synchronization via Supabase and PostgreSQL.</p>
-                    </div>
-                </div>
-
-                <div class="relative mb-12">
-                    <div class="timeline-dot bg-blue-400 border-dark" style="box-shadow: 0 0 0 2px #38BDF8;"></div>
-                    <div class="bg-slate-800 rounded-xl p-6 ml-4 border-l-4 border-blue-400 shadow-lg relative z-10">
-                        <span class="text-blue-400 font-bold tracking-wider text-sm mb-1 block">Mar 2024 - Nov 2024 (9 Months)</span>
-                        <h4 class="text-xl font-bold mb-1">Frontend Developer (React)</h4>
-                        <p class="text-slate-400 font-medium mb-3">Limatrix Inc.</p>
-                        <p class="text-slate-300 text-sm">Translated complex UI/UX requirements into modular, reusable React components. Integrated RESTful APIs, optimized client-side state management, and delivered responsive interfaces within Agile cycles.</p>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div class="timeline-dot bg-amber-500 border-dark" style="box-shadow: 0 0 0 2px #F59E0B;"></div>
-                    <div class="bg-slate-800 rounded-xl p-6 ml-4 border-l-4 border-amber-500 shadow-lg relative z-10">
-                        <span class="text-amber-400 font-bold tracking-wider text-sm mb-1 block">Jul 2023 - Nov 2023 (5 Months)</span>
-                        <h4 class="text-xl font-bold mb-1">Web Design Trainee & Foundation Phase</h4>
-                        <p class="text-slate-400 font-medium mb-3">Deltawy</p>
-                        <p class="text-slate-300 text-sm">Completed intensive 5-month web design training covering core UI principles, responsive layouts, and modern frontend fundamentals. Earned professional certificates, engaged in active tech events, built practical training projects, and mastered prompt engineering & workflow optimization using AI Studio.</p>
-                    </div>
-                </div>
+    <section class="section reveal" id="journey">
+      <div class="section-head">
+        <div><div class="section-label">03 / Professional timeline</div><h3 class="section-title">The path so far.</h3></div>
+        <p class="section-desc">A progression from design foundations to frontend engineering, full-stack workflows, and operational dashboard systems.</p>
+      </div>
+      <div class="journey">
+        <div class="timeline">
+          <article class="entry">
+            <span class="dot"></span><div class="entry-card">
+              <div class="entry-top"><span class="date">JAN 2026 — FEB 2027</span><span class="duration">14-MONTH PERIOD</span></div>
+              <h5>Enterprise Dashboard & Digital Operations Engineering</h5>
+              <div class="org">Enterprise Operations · Confidential Environment</div>
+              <p>Working across digital workflow concepts, operational dashboards, structured datasets, and traceable data processes. Focus areas include replacing manual records with organized digital flows, asset and logistics visibility, and client-server auditability.</p>
             </div>
-        </section>
-
-        <section class="bg-white rounded-3xl shadow-xl p-8 border border-slate-100">
-            <div class="text-center mb-8">
-                <h3 class="text-3xl font-bold text-dark mb-4 inline-block">System Performance vs. Data Scale</h3>
-                <p class="text-slate-600 max-w-3xl mx-auto text-lg">
-                    A true Full-Stack Engineer ensures frontend responsiveness never degrades as backend datasets scale. Through server-side pagination, query indexing, and optimized API payloads, UI rendering remains smooth across hundreds of thousands of operational records.
-                </p>
+          </article>
+          <article class="entry">
+            <span class="dot" style="background:var(--blue)"></span><div class="entry-card">
+              <div class="entry-top"><span class="date">AUG 2025 — DEC 2025</span><span class="duration">5 MONTHS</span></div>
+              <h5>Dashboard Manager & Full-Stack Operations Specialist</h5>
+              <div class="org">Lamar Real Estate · Qatar / Remote</div>
+              <p>Worked on administrative dashboards and CRM data workflows for a real-estate business. Focused on PostgreSQL query optimization, API synchronization, and monitoring client-server request/response behavior.</p>
             </div>
-            <div class="w-full flex justify-center">
-                <div id="plotlyScatter" class="w-full max-w-4xl h-[450px]"></div>
+          </article>
+          <article class="entry">
+            <span class="dot" style="background:var(--violet)"></span><div class="entry-card">
+              <div class="entry-top"><span class="date">JAN 2025 — JUL 2025</span><span class="duration">7 MONTHS</span></div>
+              <h5>Full-Stack / Frontend Developer</h5>
+              <div class="org">Egypt Higher Institute for Computers</div>
+              <p>Built modern web application interfaces with Next.js, TypeScript, and Tailwind CSS. Worked with authentication flows, role-based access concepts, and data synchronization using Supabase and PostgreSQL.</p>
             </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-slate-900 text-slate-400 py-12 text-center border-t border-slate-800">
-        <div class="max-w-3xl mx-auto px-6">
-            <h4 class="text-2xl font-bold text-white mb-3">Let's Build Scalable Digital Systems</h4>
-            <p class="text-slate-400 text-sm mb-8">Transforming manual workflows into fast, logged, and data-driven digital ecosystems.</p>
-            <div class="flex flex-wrap justify-center gap-6 mb-8 text-base font-medium">
-                <a href="https://github.com/eng-kamal-mohamed" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-300 hover:text-white transition-colors duration-200">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/kamal-mohamed-930758232/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-300 hover:text-blue-400 transition-colors duration-200">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    LinkedIn
-                </a>
-                <a href="mailto:aboshadykemo@gmail.com" class="flex items-center gap-2 text-slate-300 hover:text-accent transition-colors duration-200">
-                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    Email
-                </a>
+          </article>
+          <article class="entry">
+            <span class="dot" style="background:var(--green)"></span><div class="entry-card">
+              <div class="entry-top"><span class="date">MAR 2024 — NOV 2024</span><span class="duration">9 MONTHS</span></div>
+              <h5>Frontend Developer (React)</h5>
+              <div class="org">Limatrix Inc.</div>
+              <p>Translated UI/UX requirements into reusable React components, integrated REST APIs, improved client-side state handling, and delivered responsive interfaces within collaborative development cycles.</p>
             </div>
-            <p class="text-xs text-slate-500">Engineered by Kamal Mohamed ABO-Shady • Full-Stack Architecture, Data Systems & Digital Transformation.</p>
+          </article>
+          <article class="entry">
+            <span class="dot" style="background:var(--amber)"></span><div class="entry-card">
+              <div class="entry-top"><span class="date">JUL 2023 — NOV 2023</span><span class="duration">5 MONTHS</span></div>
+              <h5>Web Design Trainee & Foundation Phase</h5>
+              <div class="org">Deltawy</div>
+              <p>Completed foundational web design training covering interface principles, responsive layouts, and frontend fundamentals. Built practical training projects, earned certificates, and participated in technology events and AI-assisted workflow learning.</p>
+            </div>
+          </article>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            function wrapLabel(label) {
-                if (label.length <= 16) return label;
-                const words = label.split(' ');
-                const lines = [];
-                let currentLine = words[0];
-                for (let i = 1; i < words.length; i++) {
-                    if (currentLine.length + 1 + words[i].length <= 16) {
-                        currentLine += ' ' + words[i];
-                    } else {
-                        lines.push(currentLine);
-                        currentLine = words[i];
-                    }
-                }
-                lines.push(currentLine);
-                return lines;
-            }
+    <section class="section reveal">
+      <div class="section-head">
+        <div><div class="section-label">04 / Technology map</div><h3 class="section-title">The tools behind the work.</h3></div>
+        <p class="section-desc">A practical stack spanning interface development, backend services, data storage, and delivery workflows.</p>
+      </div>
+      <div class="skills">
+        <div class="skill"><div class="skill-icon">◈</div><strong>Frontend</strong><span>React · Next.js · TypeScript</span></div>
+        <div class="skill"><div class="skill-icon">⌘</div><strong>Backend & APIs</strong><span>Node.js · Express · REST</span></div>
+        <div class="skill"><div class="skill-icon">▤</div><strong>Databases</strong><span>PostgreSQL · MongoDB · Supabase</span></div>
+        <div class="skill"><div class="skill-icon">✳</div><strong>UI Engineering</strong><span>Tailwind CSS · Responsive UI</span></div>
+        <div class="skill"><div class="skill-icon">⌁</div><strong>AI Workflows</strong><span>AI Studio · Prompt Engineering</span></div>
+        <div class="skill"><div class="skill-icon">▧</div><strong>Data & Dashboards</strong><span>Chart.js · Data Visualization</span></div>
+        <div class="skill"><div class="skill-icon">◉</div><strong>Systems</strong><span>Linux · Bash · Networking</span></div>
+        <div class="skill"><div class="skill-icon">↗</div><strong>Engineering Practices</strong><span>Audit Logs · RBAC · Optimization</span></div>
+      </div>
+    </section>
 
-            const tooltipLogic = {
-                tooltip: {
-                    backgroundColor: 'rgba(15, 23, 42, 0.9)',
-                    titleFont: { size: 14, family: 'Inter' },
-                    bodyFont: { size: 13, family: 'Inter' },
-                    padding: 12,
-                    cornerRadius: 8,
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            const item = tooltipItems[0];
-                            let label = item.chart.data.labels[item.dataIndex];
-                            if (Array.isArray(label)) {
-                                return label.join(' ');
-                            }
-                            return label;
-                        }
-                    }
-                }
-            };
+    <section class="section reveal" id="systems">
+      <div class="panel performance">
+        <div class="performance-copy">
+          <div class="section-label">05 / Systems thinking</div>
+          <h4>Performance should scale with the data—not against it.</h4>
+          <p>Reliable dashboards depend on more than frontend rendering. Server-side pagination, indexed queries, lean API payloads, and deliberate data fetching help keep large operational datasets usable.</p>
+          <div class="callout">The chart is an illustrative engineering model—not a measured benchmark or a claim of guaranteed FPS at a specific record count.</div>
+        </div>
+        <div>
+          <div class="chart-box tall"><canvas id="scaleChart" aria-label="Illustrative chart relating dataset scale to interface responsiveness"></canvas></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-            const radarLabelsRaw = ['Full-Stack Next.js', 'Enterprise Dashboards', 'API & Audit Logging', 'AI Studio Workflows', 'UI/UX & Web Design'];
-            const radarLabelsWrapped = radarLabelsRaw.map(wrapLabel);
+  <footer>
+    <div class="wrap">
+      <div class="footer-inner">
+        <div><div class="footer-title">Let's build systems that make work simpler.</div><div class="footer-sub">Full-Stack Engineering · Digital Transformation · Data Systems</div></div>
+        <div class="socials">
+          <a href="https://github.com/eng-kamal-mohamed" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
+          <a href="https://www.linkedin.com/in/kamal-mohamed-930758232/" target="_blank" rel="noopener noreferrer">LINKEDIN ↗</a>
+          <a href="mailto:aboshadykemo@gmail.com">EMAIL ↗</a>
+        </div>
+      </div>
+      <div class="copyright">© <span id="year"></span> KAMAL MOHAMED ABO-SHADY · ENGINEERED WITH PURPOSE.</div>
+    </div>
+  </footer>
 
-            const ctxRadar = document.getElementById('domainRadarChart').getContext('2d');
-            new Chart(ctxRadar, {
-                type: 'radar',
-                data: {
-                    labels: radarLabelsWrapped,
-                    datasets: [{
-                        label: 'Engineering Proficiency',
-                        data: [95, 96, 92, 94, 90],
-                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                        borderColor: '#2563EB',
-                        pointBackgroundColor: '#8B5CF6',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: '#8B5CF6',
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
-                            grid: { color: 'rgba(0, 0, 0, 0.1)' },
-                            pointLabels: {
-                                font: { size: 12, family: 'Inter', weight: '600' },
-                                color: '#475569'
-                            },
-                            ticks: { display: false, min: 0, max: 100 }
-                        }
-                    },
-                    plugins: tooltipLogic
-                }
-            });
+  <script>
+    const palette = {
+      text: '#a9bad2', grid: 'rgba(148,163,184,.13)',
+      blue: '#58a6ff', cyan: '#53e0d0', violet: '#a78bfa', green: '#62d6a5'
+    };
+    Chart.defaults.color = palette.text;
+    Chart.defaults.font.family = 'Manrope, sans-serif';
+    Chart.defaults.font.size = 10;
+    Chart.defaults.plugins.legend.labels.usePointStyle = true;
+    Chart.defaults.plugins.tooltip.backgroundColor = 'rgba(7,13,27,.96)';
+    Chart.defaults.plugins.tooltip.borderColor = 'rgba(148,163,184,.2)';
+    Chart.defaults.plugins.tooltip.borderWidth = 1;
+    Chart.defaults.plugins.tooltip.padding = 11;
+    Chart.defaults.plugins.tooltip.titleFont = { family: 'DM Mono, monospace', size: 10 };
+    Chart.defaults.plugins.tooltip.bodyFont = { family: 'Manrope, sans-serif', size: 10 };
 
-            const barLabelsRaw = ['React & Next.js', 'TypeScript & Node.js', 'AI Studio & Prompt Eng', 'PostgreSQL & Supabase', 'Tailwind & Web Design'];
-            const barLabelsWrapped = barLabelsRaw.map(wrapLabel);
+    new Chart(document.getElementById('domainChart'), {
+      type: 'radar',
+      data: {
+        labels: [['Frontend','Engineering'], ['Dashboards','& Visualization'], ['API & Data','Workflows'], ['AI-Assisted','Development'], ['UI/UX &','Web Design']],
+        datasets: [{
+          label: 'Focus index',
+          data: [94, 91, 88, 86, 90],
+          backgroundColor: 'rgba(83,224,208,.13)',
+          borderColor: palette.cyan,
+          pointBackgroundColor: palette.blue,
+          pointBorderColor: '#eaf6ff',
+          pointRadius: 3,
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        scales: { r: {
+          min: 0, max: 100, beginAtZero: true,
+          angleLines: { color: palette.grid }, grid: { color: palette.grid },
+          pointLabels: { color: '#c3d1e4', font: { size: 10, weight: '600' } },
+          ticks: { display: false, stepSize: 20 }
+        }},
+        plugins: { legend: { display: false } }
+      }
+    });
 
-            const ctxBar = document.getElementById('techBarChart').getContext('2d');
-            new Chart(ctxBar, {
-                type: 'bar',
-                data: {
-                    labels: barLabelsWrapped,
-                    datasets: [{
-                        label: 'Mastery Level (%)',
-                        data: [96, 92, 95, 90, 94],
-                        backgroundColor: [
-                            '#1E3A8A',
-                            '#2563EB',
-                            '#8B5CF6',
-                            '#3B82F6',
-                            '#10B981'
-                        ],
-                        borderRadius: 6,
-                        borderSkipped: false
-                    }]
-                },
-                options: {
-                    indexAxis: 'y',
-                    maintainAspectRatio: false,
-                    responsive: true,
-                    scales: {
-                        x: {
-                            grid: { display: false },
-                            ticks: { display: false, max: 100 },
-                            border: { display: false }
-                        },
-                        y: {
-                            grid: { display: false },
-                            ticks: {
-                                font: { size: 12, family: 'Inter', weight: '600' },
-                                color: '#475569'
-                            },
-                            border: { display: false }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        ...tooltipLogic
-                    }
-                }
-            });
+    new Chart(document.getElementById('stackChart'), {
+      type: 'bar',
+      data: {
+        labels: [['React /','Next.js'], ['TypeScript /','Node.js'], ['PostgreSQL /','Supabase'], ['Tailwind /','UI Design'], ['AI Tools /','Automation']],
+        datasets: [{
+          label: 'Technology focus',
+          data: [96, 90, 89, 92, 86],
+          backgroundColor: [palette.blue, palette.cyan, palette.violet, palette.green, '#6e8cff'],
+          borderRadius: 7, borderSkipped: false, barThickness: 15
+        }]
+      },
+      options: {
+        indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+        scales: {
+          x: { min: 0, max: 100, grid: { color: palette.grid }, ticks: { display: false }, border: { display: false } },
+          y: { grid: { display: false }, border: { display: false }, ticks: { color: '#c3d1e4', font: { size: 10, weight: '600' } } }
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` Focus index: ${ctx.raw}/100` } } }
+      }
+    });
 
-            const dataVolume = [10, 50, 100, 200, 300, 400];
-            const renderFPS = [60, 60, 59, 59, 58, 57];
-            const markerSizes = [12, 15, 18, 22, 26, 30];
+    new Chart(document.getElementById('scaleChart'), {
+      type: 'line',
+      data: {
+        labels: ['10K', '50K', '100K', '200K', '300K', '400K+'],
+        datasets: [{
+          label: 'Illustrative responsiveness index',
+          data: [98, 96, 94, 91, 89, 86],
+          borderColor: palette.cyan,
+          backgroundColor: 'rgba(83,224,208,.12)',
+          fill: true, tension: .38,
+          pointRadius: 4, pointHoverRadius: 6,
+          pointBackgroundColor: palette.blue,
+          pointBorderColor: '#eaf6ff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        interaction: { intersect: false, mode: 'index' },
+        scales: {
+          x: { title: { display: true, text: 'Illustrative dataset scale', color: '#9aabc5' }, grid: { color: palette.grid }, border: { display: false } },
+          y: { min: 70, max: 100, title: { display: true, text: 'Responsiveness index', color: '#9aabc5' }, grid: { color: palette.grid }, border: { display: false }, ticks: { stepSize: 10 } }
+        },
+        plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ` Index: ${ctx.raw}/100 (illustrative)` } } }
+      }
+    });
 
-            const trace1 = {
-                x: dataVolume,
-                y: renderFPS,
-                mode: 'markers',
-                type: 'scattergl',
-                marker: {
-                    size: markerSizes,
-                    color: dataVolume,
-                    colorscale: 'Viridis',
-                    showscale: true,
-                    line: { color: 'white', width: 1 }
-                },
-                text: dataVolume.map(v => `Dataset Scale: ${v}K Records`),
-                hovertemplate: '<b>%{text}</b><br>UI Render FPS: %{y}<extra></extra>'
-            };
-
-            const plotlyLayout = {
-                margin: { t: 20, b: 50, l: 50, r: 20 },
-                paper_bgcolor: 'rgba(0,0,0,0)',
-                plot_bgcolor: 'rgba(0,0,0,0)',
-                xaxis: { 
-                    title: 'Operational Dataset Scale (Thousands of Records)',
-                    gridcolor: '#E2E8F0',
-                    zerolinecolor: '#CBD5E1'
-                },
-                yaxis: { 
-                    title: 'Frontend Render FPS',
-                    range: [45, 65],
-                    gridcolor: '#E2E8F0',
-                    zerolinecolor: '#CBD5E1'
-                },
-                font: { family: 'Inter', color: '#475569' }
-            };
-
-            const plotlyConfig = {
-                responsive: true,
-                displayModeBar: false
-            };
-
-            Plotly.newPlot('plotlyScatter', [trace1], plotlyLayout, plotlyConfig);
-        });
-    </script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
