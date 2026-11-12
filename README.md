@@ -28,7 +28,9 @@ Wherever I join, I focus on replacing manual, paper-heavy workflows with automat
 - 🗄️ **Database Engineering:** Designing, indexing, and optimizing relational & NoSQL databases (PostgreSQL, MongoDB, Supabase).
 - 🌐 **Infrastructure & Ops:** Managing Linux servers, MikroTik routing operations, and real-time system observability.
 
-> "My goal is to build software that doesn't just look good — it eliminates manual bottlenecks, logs every critical operation, and makes business decisions smarter."
+✨ **In short:** *I take complex, paper-heavy operations and engineer them into fast, transparent, and scalable digital systems.*
+
+> 💡 *"I don’t just write code to make screens work—I architect every layer with full awareness of how data moves, where bottlenecks hide, and how each request translates into real business value."*
 
 ---
 
