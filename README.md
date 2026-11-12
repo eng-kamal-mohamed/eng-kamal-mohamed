@@ -1,256 +1,181 @@
+ <div align="center">
 
-# Kamal Mohamed ABO-Shady
+<img src="https://capsule-render.vercel.app/api?type=venom&height=250&color=0:020617,45:0c4a6e,100:2563eb&text=KAMAL%20MOHAMED&fontColor=ffffff&fontSize=48&fontAlignY=40&desc=FULL-STACK%20ENGINEER%20%7C%20DIGITAL%20TRANSFORMATION&descSize=14&descAlignY=60&animation=fadeIn" width="100%" />
 
-<div align="center">
+<a href="https://readme-typing-svg.demolab.com">
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=18&pause=1000&color=38BDF8&center=true&vCenter=true&width=750&lines=Building+Modern+Web+Applications;Engineering+Enterprise+Dashboards;Transforming+Complex+Workflows+Into+Digital+Systems;Turning+Data+Into+Business+Insights" alt="Typing SVG" />
+</a>
 
-### Full-Stack Software Engineer • Digital Transformation Architect • Enterprise Dashboard Specialist
+<br/>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&pause=1000&color=0E75B6&center=true&vCenter=true&width=900&lines=Full-Stack+Software+Engineer+(React+%7C+Next.js+%7C+Node.js);Large-Scale+Paper-to-Digital+Transformation;Enterprise+Dashboard+Architect+(400K%2B+Records);Client-Server+Lifecycle+%26+System+Logging+Mastery;Frontend+%2B+Backend+%2B+Infrastructure+%2B+Analytics" alt="Typing SVG" />
+<a href="https://github.com/eng-kamal-mohamed"><img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" /></a>
+<a href="https://eng-kamal-mohamed.github.io/eng-kamal-mohamed/"><img src="https://img.shields.io/badge/Portfolio-Visit-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white" /></a>
+<a href="mailto:aboshadykemo@gmail.com"><img src="https://img.shields.io/badge/Contact-Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 
 </div>
 
 ---
 
-# 🚀 About Me
+## 👨‍💻 About Me
 
-I’m a high-impact **Full-Stack Software Engineer & Digital Transformation Specialist** with hands-on experience building and managing enterprise-grade systems across:
+I'm **Kamal Mohamed ABO-Shady**, a Full-Stack Software Engineer passionate about building modern web applications, enterprise dashboards, and data-driven digital solutions.
 
-- Large-scale paper-to-digital transformation
-- Enterprise operational & workforce analytics
-- Commercial aviation & fleet logistics platforms
-- Industrial manufacturing workflows
-- Real estate management platforms
-- Infrastructure & network monitoring
-- High-volume database systems
+I focus on combining clean frontend experiences with reliable backend architectures to solve real operational challenges.
 
-Wherever I join, I drive measurable operational change by replacing manual, paper-heavy workflows with automated, scalable digital ecosystems. Because I engineer across the entire stack, I specialize in building **enterprise dashboards** backed by deep mastery of **client-server request/response lifecycles, API optimization, and granular audit logging**.
+- 🚀 Building modern applications with React and Next.js.
+- 📊 Developing interactive dashboards and analytics systems.
+- 🔄 Transforming manual workflows into digital processes.
+- 🗄️ Working with relational and NoSQL databases.
+- 🔌 Designing API integrations and client-server workflows.
+- 🌐 Exploring infrastructure, networking, and system monitoring.
 
-I have worked on systems involving:
-
-- 🔄 End-to-end paper-to-digital workflow automation
-- 📊 Advanced enterprise analytics dashboards
-- ✈️ Commercial fleet monitoring & logistics systems
-- 🏭 Industrial workflow simulation
-- 📦 Serialized spare-parts lifecycle tracking
-- 🗄️ High-volume inventory databases (400K+ records)
-- 🌐 Infrastructure & network monitoring
-- 🔍 Client-server request/response & audit logging
-- ⚡ Real-time data visualization
-- 🔐 Secure enterprise environments
+> My goal is to build software that doesn't just look good — it makes business operations smarter.
 
 ---
 
-# 🧠 Professional Profile
+## ⚡ Tech Stack & Tools
 
-```yaml
-Name: Kamal Mohamed ABO-Shady
-Location: Egypt
-Role: Full-Stack Software Engineer / Enterprise Dashboard Specialist
-Core_Mission: High-Volume Paper-to-Digital Transformation
-Experience_Domains:
-  - Enterprise Digital Transformation
-  - Commercial Aviation & Fleet Logistics
-  - Industrial Operations & Analytics
-  - International Real Estate Operations
-  - Infrastructure & Network Monitoring
-  - High-Volume Enterprise Dashboards
+<div align="center">
 
-Main_Focus:
-  - Full-Stack Web Architecture
-  - Client-Server Request/Response Optimization
-  - Granular System Logging & Observability
-  - Paperless Workflow Automation
-  - High-Volume Data Management (400K+ Records)
-  - Real-Time Executive Dashboards
+### 🎨 Frontend Development
 
-```
+<img src="https://skillicons.dev/icons?i=html,css,js,ts,react,nextjs,tailwind" />
+
+### ⚙️ Backend Development
+
+<img src="https://skillicons.dev/icons?i=nodejs,express" />
+
+### 🗄️ Database & Backend Services
+
+<img src="https://skillicons.dev/icons?i=postgres,mongodb,supabase" />
+
+### 🛠️ Development & Infrastructure
+
+<img src="https://skillicons.dev/icons?i=git,github,linux,bash,postman" />
+
+</div>
 
 ---
 
-# 💼 Enterprise-Level Experience
+## 🏗️ Engineering Focus
 
-## 🔄 Digital Transformation & Enterprise Operations
-
-Driven large-scale operational modernization across enterprise environments:
-
-* Converted complex, manual paper-based processes into high-speed digital workflows
-* Engineered centralized platforms handling massive daily transaction volumes
-* Eliminated operational bottlenecks and manual data entry errors through automation
-* Built real-time executive dashboards providing instant visibility across departments
-* Implemented structured system logging and audit trails for complete operational accountability
-
-### System Highlights
-
-* Delivered measurable efficiency gains by digitizing legacy paper archives and approvals
-* Maintained strict data integrity across high-volume daily digital transactions
-* Designed intuitive interfaces enabling non-technical teams to adopt digital workflows rapidly
+| Area | What I Build |
+|---|---|
+| 💻 Full-Stack Development | Modern web applications and scalable architectures |
+| 📊 Dashboard Engineering | Executive dashboards and data visualization |
+| 🔄 Digital Transformation | Paper-to-digital workflow automation |
+| 🔌 API Engineering | REST APIs and client-server integration |
+| 🗄️ Database Systems | Data modeling, query optimization, and management |
+| 🌐 Infrastructure | Linux, networking, and monitoring workflows |
 
 ---
 
-## ✈️ Commercial Aviation & Fleet Logistics Systems
+## 🚀 Featured Projects
 
-Worked on advanced enterprise operational systems for:
+<div align="center">
 
-* Commercial aircraft & fleet operational tracking
-* Technical interface & telemetry monitoring
-* Serialized spare-parts lifecycle management
-* Multi-warehouse digital synchronization systems
-* Industrial manufacturing workflows
-* Real-time fleet status monitoring
-* Distribution and supply-chain logistics management
-* Operational reporting dashboards
+<a href="https://github.com/eng-kamal-mohamed/CHAT-AI-ollama">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=CHAT-AI-ollama&theme=tokyonight&hide_border=true" />
+</a>
 
-### System Highlights
+<a href="https://github.com/eng-kamal-mohamed/Graduation-Projects-Management">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=Graduation-Projects-Management&theme=tokyonight&hide_border=true" />
+</a>
 
-* Digitized complex multi-warehouse inventory movements into real-time tracking systems
-* Built mission-critical monitoring interfaces for high-precision fleet operations
-* Simulated industrial workflow processes to optimize resource allocation
-* Integrated logistics, procurement, and inventory tracking into a unified full-stack platform
+<a href="https://github.com/eng-kamal-mohamed/Menu">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=Menu&theme=tokyonight&hide_border=true" />
+</a>
 
----
+<a href="https://github.com/eng-kamal-mohamed/-video-generator-app">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=-video-generator-app&theme=tokyonight&hide_border=true" />
+</a>
 
-## 📊 Large-Scale Workforce & Industrial Analytics Systems
+<a href="https://github.com/eng-kamal-mohamed/cloud-hosting">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=eng-kamal-mohamed&repo=cloud-hosting&theme=tokyonight&hide_border=true" />
+</a>
 
-Worked on enterprise analytics and strategic operational dashboards including:
-
-* Workforce performance & operational analytics
-* Productivity and compliance reporting systems
-* Advanced charting and real-time data visualization
-* Executive decision-support dashboards
-* High-volume database operations
-* Role-based secure data handling workflows
-* Industrial workshop & maintenance management systems
-
-### Operational Scale
-
-* Managed and queried databases exceeding **400K+ operational records** with sub-second responsiveness
-* Replaced paper workshop logs with centralized digital tracking and reporting interfaces
-* Engineered server-side pagination, indexing, and caching for seamless frontend performance
+</div>
 
 ---
 
-## 🏢 Real Estate Dashboard Operations
+## 📈 GitHub Analytics
 
-Worked as Dashboard Manager & Full-Stack Operations Specialist for an international real estate company in Qatar.
+<div align="center">
 
-Responsibilities included:
+<img height="180" src="https://github-readme-stats.vercel.app/api?username=eng-kamal-mohamed&show_icons=true&theme=tokyonight&hide_border=true&rank_icon=github" />
 
-* Full-stack dashboard management and feature expansion
-* PostgreSQL database monitoring and workflow optimization
-* CRM data synchronization and pipeline automation
-* Client-server API testing, debugging, and latency optimization
-* Request/response monitoring and error logging
-* Infrastructure and server health monitoring
-* Executive operational analytics and reporting
+<img height="180" src="https://github-readme-stats.vercel.app/api/top-langs/?username=eng-kamal-mohamed&layout=compact&theme=tokyonight&hide_border=true" />
 
----
+<br/><br/>
 
-# 🧰 Tech Stack
+<img src="https://streak-stats.demolab.com?user=eng-kamal-mohamed&theme=tokyonight&hide_border=true" />
 
-## 💻 Frontend & Dashboard Engineering
-
-* React.js & Next.js (App Router & SSR)
-* TypeScript & Modern JavaScript (ES6+)
-* Tailwind CSS & Responsive UI Systems
-* Enterprise Dashboard UI Architecture
-* Advanced Data Visualization & Charting
-* Client-Side State & Cache Synchronization
-* Reusable Component Systems
+</div>
 
 ---
 
-## ⚙️ Backend, API Lifecycle & Logging
+## 🎯 Current Focus
 
-* Node.js & Express.js
-* RESTful API Architecture & Integration
-* Client-Server Request/Response Lifecycle Optimization
-* Granular Audit Logging & Error Tracking
-* Authentication & Role-Based Access Control (RBAC)
-* Postman API Testing & Payload Validation
-* Real-Time Data Processing Pipelines
-* Git & GitHub Version Control
+- ⚡ Advanced React & Next.js Architecture
+- 🧠 Full-Stack Application Engineering
+- 📊 Enterprise Dashboard Development
+- 🔐 Secure Authentication & Authorization
+- 🗄️ Database Performance Optimization
+- 🌐 Infrastructure & Network Monitoring
 
 ---
 
-## 🗄️ Data & Database Systems
+## 🤝 Connect With Me
 
-* PostgreSQL, MongoDB & Supabase
-* High-Volume Data Management (400K+ Records)
-* Query Optimization & Indexing Strategies
-* Relational Data Modeling & Warehouse Logic
-* Automated Data Synchronization Workflows
-* Database Health & Performance Monitoring
+<div align="center">
 
----
+<a href="https://github.com/eng-kamal-mohamed">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+</a>
+<a href="https://www.facebook.com/share/19ra6ZYj4c/">
+<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" />
+</a>
+<a href="https://www.instagram.com/kemooo_2003/">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+</a>
+<a href="https://wa.me/201017232631">
+<img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+</a>
+<a href="https://x.com/Kamalmo7amed2">
+<img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" />
+</a>
+<a href="mailto:aboshadykemo@gmail.com">
+<img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
+</a>
 
-## 🌐 Infrastructure & Networking
+<br/><br/>
 
-* Linux Server Administration & Bash Scripting
-* MikroTik RouterOS Administration
-* Network Traffic & Bandwidth Monitoring
-* Infrastructure Operations & Uptime Tracking
-* Secure Enterprise Deployment Workflows
+<a href="https://eng-kamal-mohamed.github.io/eng-kamal-mohamed/">
+<img src="https://img.shields.io/badge/🌐%20Explore%20My%20Portfolio-Visit%20Website-0EA5E9?style=for-the-badge" />
+</a>
 
----
-
-# 🏗️ Featured Enterprise Architectures (Case Studies)
-
-| System Architecture | Operational Impact & Engineering Scope | Core Stack |
-| --- | --- | --- |
-| **Paper-to-Digital Enterprise Workflow Engine** | Replaced manual paper approvals and physical ledgers with a centralized, high-volume digital platform featuring full audit logging. | `Next.js` `Node.js` `PostgreSQL` |
-| **Serialized Fleet & Warehouse Tracking System** | End-to-end inward/outward logistics system tracking serialized components across multi-unit deployments in real time. | `React` `TypeScript` `Odoo` `PostgreSQL` |
-| **400K+ Records High-Speed Analytics Dashboard** | High-density executive dashboard utilizing server-side pagination, query indexing, and optimized client-server payloads. | `Next.js` `Express` `PostgreSQL` `Tailwind` |
-| **API Lifecycle & Infrastructure Monitor** | Centralized observability tool tracking client-server request/response latency, system logs, and network health. | `Node.js` `REST APIs` `Linux` `MikroTik` |
-
----
-
-# ✅ What I Deliver
-
-✅ End-to-End Full-Stack Web Applications
-
-✅ Large-Scale Paper-to-Digital Transformation
-
-✅ Real-Time Enterprise Dashboards
-
-✅ Optimized Client-Server API Architectures
-
-✅ Comprehensive Audit Logging & System Observability
-
-✅ High-Volume Database Systems (400K+ Records)
-
-✅ Serialized Inventory & Logistics Platforms
-
-✅ Secure Role-Based Administrative Systems
+</div>
 
 ---
 
-# 🔥 Current Focus
+## 🧠 Engineering Mindset
 
-Currently focused on:
-
-* Full-stack enterprise architecture
-* High-volume paperless digital transformation
-* Advanced client-server performance & logging
-* Real-time analytical dashboards
-* Scalable database optimization
-
----
-
-# 📫 Connect With Me
-
----
-
-# 🧩 Engineering Mindset
+<div align="center">
 
 ```text
-Digitize manual paper bottlenecks at scale.
-Master the full client-server request/response lifecycle.
-Log every critical action — visibility builds trust.
-Visualize complex data into clear executive decisions.
-Think beyond basic CRUD applications.
-
+       UNDERSTAND THE PROBLEM
+                 ↓
+        DESIGN THE ARCHITECTURE
+                 ↓
+          BUILD THE SOLUTION
+                 ↓
+       OPTIMIZE THE PERFORMANCE
+                 ↓
+         DELIVER BUSINESS VALUE
 ```
 
----
+### "Clean Code. Smart Architecture. Real-World Impact."
 
-### "Great systems don't just run code—they transform paper into speed, data into clarity, and operations into measurable growth."
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563eb,100:020617&height=120&section=footer" width="100%" />
+
+</div>
