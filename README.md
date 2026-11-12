@@ -1,4 +1,4 @@
-```markdown
+
 # Kamal Mohamed ABO-Shady
 
 <div align="center">
